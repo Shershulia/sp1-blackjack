@@ -1,0 +1,7 @@
+[package]
+name = "blackjack-program"
+version = "1.1.0"
+edition = "2021"
+
+[dependencies]
+sp1-zkvm = "4.0.0"

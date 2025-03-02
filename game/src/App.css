@@ -1,0 +1,339 @@
+.App {
+  text-align: center;
+  z-index: 2; /* Убеждаемся, что контент сверху */
+  position: relative; /* Фиксируем */
+
+}
+
+/* Глитч-анимация */
+@keyframes glitchBackground {
+  0% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 25% 50%;
+  }
+  50% {
+    background-position: 50% 50%;
+  }
+  75% {
+    background-position: 75% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Дополнительный эффект глитча: мерцающие полосы */
+.glitch-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  mix-blend-mode: difference;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(255, 0, 127, 0.2),
+    rgba(98, 18, 80, 0.2) 2px,
+    transparent 3px,
+    transparent 6px
+  );
+  animation: glitchLines 0.15s infinite linear;
+}
+
+/* Анимация мерцания полос */
+@keyframes glitchLines {
+  0% { opacity: 0.1; transform: translateY(0); }
+  50% { opacity: 0.3; transform: translateY(2px); }
+  100% { opacity: 0.1; transform: translateY(0); }
+}
+
+
+body, html {
+  margin: 0;
+  overflow-x: hidden;
+  padding: 0;
+  background-image: url("/public/images/dealer.jpg"); 
+  background: linear-gradient(to bottom, #ff007f, #621250);
+  background-size: contain; /* Заполняем экран, ширина может обрезаться */
+  background-position: center top; /* Центрируем картинку по горизонтали, выравниваем вверх */
+  background-repeat: no-repeat; /* Запрещаем повторение */
+  object-fit: cover; /* Дополнительно: предотвращает искажения */
+}
+
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+.App{
+  margin: 0;
+  padding: 0;
+  background-image: url("/public/images/dealer.jpg"); 
+  background-size: contain; /* Заполняем экран, ширина может обрезаться */
+  background-position: center top; /* Центрируем картинку по горизонтали, выравниваем вверх */
+  background-repeat: no-repeat; /* Запрещаем повторение */
+  object-fit: cover; /* Дополнительно: предотвращает искажения */
+}
+.App-header {
+  background-color: #282c34;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.header {
+  margin: 0;
+  color: #fe2bcc;
+  font-size: medium;
+  background-color: black;
+  animation: pulse 1.5s infinite;
+  
+}
+.deck{
+  width: auto;
+  height: auto;
+  max-width: 240px; 
+  max-height: 240px;
+  object-fit: contain;
+}
+.header-container{
+  position: fixed;
+  width: 100vw;
+  background-color: #000;
+  height: 80px;
+  top: 0;
+  right: 0;
+  margin-bottom: 0px;
+  z-index: 10; /* Поверх всего */
+}
+.button-container-upper{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.background-panel{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+.stand-button {
+  border: #000;
+  background-color: #af1d8d !important; 
+}
+.star{
+  width: 20px;
+  height: 20px;
+}
+.star-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.background{
+  margin-top: 80px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
+  z-index: -1;
+}
+.score{
+  background-color: white;
+  color: #000;
+  width: 200px;
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px;
+}
+.stand-button:hover {
+  background-color: #781461 !important;
+}
+
+.hit-button {
+  background-color: #fe2bcc !important; 
+}
+
+.hit-button:hover {
+  background-color: #ed27bf!important; 
+}
+.balance-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.balance-text {
+  font-weight: bold;
+  color: #fe2bcc;
+}
+
+.balance-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s ease-in-out, transform 0.2s;
+}
+
+.decrease-button {
+  background-color: #dc3545; /* Красный */
+  color: white;
+}
+
+.decrease-button:hover {
+  background-color: #c82333;
+  transform: scale(1.1);
+}
+
+.increase-button {
+  background-color: #28a745; /* Зеленый */
+  color: white;
+}
+.balance-wrapper {
+  position: fixed;
+  top: 7%;
+  right: 0%;
+  padding: 8px 15px;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 0px 0px 10px 10px;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+  gap: 10px;
+}
+
+.increase-button:hover {
+  background-color: #218838;
+  transform: scale(1.1);
+}
+
+.button-text {
+  margin: 0;
+  font-weight: bold;
+}
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.overlay {
+  position: fixed;
+  z-index: 98;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.start-button {
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border-radius: 10px;
+  margin-top: 20px;
+  transition: 0.3s;
+}
+
+.start-button.start {
+  background: #4CAF50; /* Зеленая */
+}
+
+.start-button.restart {
+  background: #FFC107; /* Желтая */
+}
+.button-img{
+  width: 30px;
+  height: 30px;
+}
+.button-text{
+  color: black;
+}
+.start-button:hover {
+  opacity: 0.8;
+}
+.game-button {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border: none;
+  border: 1px black solid;
+  padding: 15px 30px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border-radius: 10px;
+  margin-top: 20px;
+  transition: 0.3s;
+  width: 200px;
+  background: #ff9800; 
+}
+
+
+.button-container {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+

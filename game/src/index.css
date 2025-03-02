@@ -1,0 +1,28 @@
+@font-face {
+  font-family: 'ABC Oracle';
+  src: url('/public/ABC%20Oracle/ABCOracle-Medium-Trial.woff2') format('woff2'),
+       url('/public/ABC%20Oracle/ABCOracle-Medium-Trial.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ABC Oracle';
+  src: url('/public/ABC%20Oracle/ABCOracle-Bold-Trial.woff2') format('woff2'),
+       url('/public/ABC%20Oracle/ABCOracle-Bold-Trial.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+
+/* Применение шрифта */
+body {
+  margin: 0;
+  font-family: 'ABC Oracle', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}

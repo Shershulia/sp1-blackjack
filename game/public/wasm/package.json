@@ -1,0 +1,27 @@
+{
+  "name": "sp1-wasm-verifier",
+  "collaborators": [
+    "Bhargav Annem, Yuwen Zhang"
+  ],
+  "description": "A rust verifier for BN254 curve",
+  "version": "1.0.2",
+  "license": "MIT/Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/succinctlabs/sp1-wasm-verifier"
+  },
+  "files": [
+    "sp1_wasm_verifier_bg.wasm",
+    "sp1_wasm_verifier.js",
+    "sp1_wasm_verifier.d.ts"
+  ],
+  "main": "sp1_wasm_verifier.js",
+  "types": "sp1_wasm_verifier.d.ts",
+  "keywords": [
+    "zero-knowledge",
+    "cryptography",
+    "zkSNARK",
+    "SNARK",
+    "gnark"
+  ]
+}
